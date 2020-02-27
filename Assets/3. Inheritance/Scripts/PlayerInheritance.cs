@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInheritance : MonoBehaviour
 {
 	public List<Item> ItemList = new List<Item>();
+	public Item EquipedItem;
 
 	public void Start()
 	{
@@ -15,6 +16,8 @@ public class PlayerInheritance : MonoBehaviour
 		{
 			Debug.Log(i.Name + ": $" + i.Cost);
 		}
+
+		EquipedItem = ItemList[0];
 	}
 
 	private void Update()
@@ -24,5 +27,12 @@ public class PlayerInheritance : MonoBehaviour
 		{
 			ItemList[Random.Range(0, ItemList.Count)].Use();
 		}
+	}
+
+	public void HurtEnemy()
+	{
+		Enemy e = new SmallGoblin();
+
+		e.Health -= 10 * ItemList[1].Damage;
 	}
 }

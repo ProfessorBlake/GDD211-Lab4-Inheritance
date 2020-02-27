@@ -5,6 +5,7 @@ public class Item
 {
 	public string Name;
 	public int Cost;
+	public float Damage;
 
 	public void Use()
 	{

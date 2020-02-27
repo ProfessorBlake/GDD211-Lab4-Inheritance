@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Orc : Enemy
+public abstract class Orc : Enemy
 {
 	public float AvoidChance;
 
